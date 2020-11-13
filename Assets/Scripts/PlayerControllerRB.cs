@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerControllerRB : MonoBehaviour
 {
+    public static PlayerControllerRB Instance;
+
     //public values
     public float MoveSpeed, JumpForce, GravityScale, TerminalVelocity;
     public float GroundCheckDistance, GroundCheckRadius;
@@ -15,6 +17,7 @@ public class PlayerControllerRB : MonoBehaviour
     private bool jumpUsed;
 
     private void Awake() {
+        Instance = this;
         rb = GetComponent<Rigidbody>();
         if(rb == null)
             rb = gameObject.AddComponent<Rigidbody>();
@@ -27,7 +30,7 @@ public class PlayerControllerRB : MonoBehaviour
         bool grounded = false;
 
         //ground check
-        if( Physics.BoxCast(transform.position, Vector3.one * GroundCheckRadius, Vector3.down, out RaycastHit hit, Quaternion.identity, GroundCheckDistance, LayerMask.GetMask("ForegroundEnvironment")) )
+        if( Physics.BoxCast(transform.position, Vector3.one * GroundCheckRadius, Vector3.down, out RaycastHit hit, Quaternion.identity, GroundCheckDistance, LayerMask.GetMask("ForegroundEnvironment", "Ground")) )
         {
             print("grounded");
             grounded = true;
