@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7841295584734746800}
-  movementSpeed: 1
+  movementSpeed: 300
 --- !u!54 &6922183379007083313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -567,7 +567,7 @@ Rigidbody:
   m_GameObject: {fileID: 6922183379007083316}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.5
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -693,7 +693,7 @@ Transform:
   m_GameObject: {fileID: 7841295584734746801}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 2828501203910500324}
   - {fileID: 5008733139683402469}
