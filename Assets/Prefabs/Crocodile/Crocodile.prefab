@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8636820116293803793}
   - component: {fileID: 1913228671080737307}
   - component: {fileID: 6922183380469097960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Object001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 8017888200400597639}
   - component: {fileID: 6075588540503473497}
   - component: {fileID: 6922183380469097972}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 6609953072166704745}
   - component: {fileID: 6742167745243078798}
   - component: {fileID: 6922183380469097971}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 5902425150376424}
   - component: {fileID: 4530807604632719617}
   - component: {fileID: 6922183380469097973}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 2986981916276119677}
   - component: {fileID: 2128654056920816930}
   - component: {fileID: 6922183380469097974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6922183378805157044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightHind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 6922183379007083315}
   - component: {fileID: 6922183379007083314}
   - component: {fileID: 6922183379007083313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crocodile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7841295584734746800}
-  movementSpeed: 300
+  movementSpeed: 3000
 --- !u!54 &6922183379007083313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6922183379007083316}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0.5
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -583,7 +583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6922183379048702863}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftHind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6922183379181438176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6922183379755101959}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7465332549250990603}
   - component: {fileID: 7841295584734746800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: krokotiili
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 5663194657030054799}
   - component: {fileID: 198460276587895084}
   - component: {fileID: 6922183380469097975}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
