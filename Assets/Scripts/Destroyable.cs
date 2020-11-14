@@ -31,26 +31,48 @@ public class Destroyable : MonoBehaviour
     public void CollisionActions(Collision _collision, bool addForce = true)
     {
         // Do constraint changes if necessary
-        rb.constraints = RigidbodyConstraints.None;
+        //rb.constraints = RigidbodyConstraints.None;
 
-        if(_collision.gameObject.tag == "Crocodile" && addForce)
-        rb.AddRelativeForce(_collision.GetContact(0).point.normalized * 15f, ForceMode.Impulse);
+        foreach (Transform t in gameObject.GetComponentsInChildren<Transform>())
+        {
+            if (t.gameObject.GetComponent<Destroyable>() != null && t.gameObject != this.gameObject)
+            {
+                t.gameObject.GetComponent<Destroyable>().CollisionActions(_collision, false);
+            }
+        }
+
+        transform.SetParent(null);
+        if(gameObject.GetComponent<Rigidbody>() == null)
+        rb = gameObject.AddComponent<Rigidbody>();
+        if (_collision.gameObject.tag == "Crocodile" && addForce)
+            rb.AddRelativeForce(_collision.GetContact(0).point.normalized * 15f, ForceMode.Impulse);
     }
 
     public void InitialChecks() // Initial checks
     {
+        foreach (Transform t in gameObject.GetComponentsInChildren<Transform>())
+        {
+            if (t.gameObject != this.gameObject)
+            {
+                if (t.GetComponent<Destroyable>() == null)
+                {
+                    Destroyable d = t.gameObject.AddComponent<Destroyable>();
+                }
+            }
+        }
+
         if (gameObject.GetComponent<Collider>() == null)
         {
-            Debug.Log("Missing a collider, adding mesh collider. Add a proper collider beforehand if this causes problems");
+            Debug.Log("Missing a collider on " + gameObject.name + ", adding mesh collider. Add a proper collider beforehand if this causes problems");
             MeshCollider mc = gameObject.AddComponent<MeshCollider>();
             mc.convex = true;
         }
-        rb = gameObject.GetComponentInChildren<Rigidbody>();
+        /*rb = gameObject.GetComponentInChildren<Rigidbody>();
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody>();
             rb.constraints = RigidbodyConstraints.FreezeAll;
-        }
+        }*/
     }
 
     private void OnCollisionEnter(Collision collision)
