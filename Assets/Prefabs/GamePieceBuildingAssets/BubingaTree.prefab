@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5397172539233241899}
   - component: {fileID: 5939593117577808788}
   - component: {fileID: 7337097206721310795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6559,7 +6559,7 @@ GameObject:
   - component: {fileID: 3311351698207259257}
   - component: {fileID: 9105437184618247494}
   - component: {fileID: 9147049971958898857}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10644,7 +10644,7 @@ GameObject:
   - component: {fileID: 2275986459923233911}
   - component: {fileID: 3559886063240204314}
   - component: {fileID: 4648782848131495485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17109,7 +17109,7 @@ GameObject:
   - component: {fileID: 8073691524561499919}
   - component: {fileID: 3469802793944392318}
   - component: {fileID: 8182051723439358976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21394,7 +21394,7 @@ GameObject:
   - component: {fileID: 8179853640716580940}
   - component: {fileID: 7274870325902470775}
   - component: {fileID: 3372708456363098997}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24575,7 +24575,7 @@ GameObject:
   - component: {fileID: 1065896796635728631}
   - component: {fileID: 8440425918362284650}
   - component: {fileID: 1185169301023544696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28523,7 +28523,7 @@ GameObject:
   - component: {fileID: 8753293650493501422}
   - component: {fileID: 3441717615548983917}
   - component: {fileID: 170845129526103687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32425,7 +32425,7 @@ GameObject:
   - component: {fileID: 2418075806739307118}
   - component: {fileID: 39184241402833832}
   - component: {fileID: 8185313841636347173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36716,7 +36716,7 @@ GameObject:
   - component: {fileID: 7861970710727281491}
   - component: {fileID: 1237238260499329982}
   - component: {fileID: 4367621429541964319}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39797,7 +39797,7 @@ GameObject:
   - component: {fileID: 2630830747574297926}
   - component: {fileID: 5694040127395183772}
   - component: {fileID: 7688215127177896873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42774,7 +42774,7 @@ GameObject:
   - component: {fileID: 4957974375672311219}
   - component: {fileID: 7133036812895956427}
   - component: {fileID: 7787102827531678343}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46466,7 +46466,7 @@ GameObject:
   - component: {fileID: 4759543768636439608}
   - component: {fileID: 962336796166166303}
   - component: {fileID: 125575237419651184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49427,7 +49427,7 @@ GameObject:
   - component: {fileID: 540678382942526718}
   - component: {fileID: 7629046956723742618}
   - component: {fileID: 7407211188249702687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54162,7 +54162,7 @@ GameObject:
   - component: {fileID: 5712660564360281894}
   - component: {fileID: 5990083781053783142}
   - component: {fileID: 4372314232674838173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubingaTree_mesh (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59620,7 +59620,7 @@ Transform:
   m_GameObject: {fileID: 8877917127777224433}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 1.36, z: 9.43}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6032019851310753775}
   m_Father: {fileID: 0}
