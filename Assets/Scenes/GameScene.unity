@@ -404,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6249692757482142031, guid: fbe2ac41b11b8ed41a52ed3a3a555e0d, type: 3}
       propertyPath: MoveSpeed
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6249692757482142031, guid: fbe2ac41b11b8ed41a52ed3a3a555e0d, type: 3}
       propertyPath: GroundCheckRadius
@@ -413,6 +413,10 @@ PrefabInstance:
     - target: {fileID: 6249692757482142031, guid: fbe2ac41b11b8ed41a52ed3a3a555e0d, type: 3}
       propertyPath: GroundCheckDistance
       value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249692757482142031, guid: fbe2ac41b11b8ed41a52ed3a3a555e0d, type: 3}
+      propertyPath: InAirMoveSpeedMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbe2ac41b11b8ed41a52ed3a3a555e0d, type: 3}
