@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6249692757482142019}
   - component: {fileID: 6249692757482142028}
   - component: {fileID: 6249692757482142031}
+  - component: {fileID: 7087237788064290886}
   m_Layer: 12
   m_Name: temp_player
   m_TagString: Player
@@ -126,8 +127,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 10
+  InAirMoveSpeedMultiplier: 1
   JumpForce: 15
   GravityScale: 1.5
   TerminalVelocity: 10000
   GroundCheckDistance: 0.2
   GroundCheckRadius: 0.9
+--- !u!114 &7087237788064290886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6249692757482142018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef221cbb80d91e459f0f22f4fc2ac6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 3
