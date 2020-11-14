@@ -42,7 +42,8 @@ public class PlayerControllerRB : MonoBehaviour
         }
 
         //move player horizontally
-        rb.velocity = new Vector3(hInput * MoveSpeed, rb.velocity.y, rb.velocity.z);
+        rb.AddForce(Vector3.forward * MoveSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        //rb.velocity = new Vector3(hInput * MoveSpeed, rb.velocity.y, rb.velocity.z);
 
         //jump
         if(jumpInput && grounded)

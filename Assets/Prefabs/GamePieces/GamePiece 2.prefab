@@ -142,8 +142,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: TestPiece
   id: 0
-  groundCollider: {fileID: 7401847407543636242}
-  duplicate: 0
 --- !u!1 &7401847408747497103
 GameObject:
   m_ObjectHideFlags: 0
