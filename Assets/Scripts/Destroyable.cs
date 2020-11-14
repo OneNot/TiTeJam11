@@ -5,6 +5,8 @@ using UnityEngine;
 public class Destroyable : MonoBehaviour
 {
     private Rigidbody rb;
+    private float collisionTimeLimit = 0.2f;
+    private float collisionTimer;
 
     private void Awake()
     {
@@ -23,10 +25,13 @@ public class Destroyable : MonoBehaviour
         
     }
 
-    public void CollisionActions()
+    public void CollisionActions(Collision _collision, bool addForce = true)
     {
         // Do constraint changes if necessary
         rb.constraints = RigidbodyConstraints.None;
+
+        if(_collision.gameObject.tag == "Crocodile" && addForce)
+        rb.AddRelativeForce(_collision.GetContact(0).point.normalized * 15, ForceMode.Impulse);
     }
 
     public void InitialChecks() // Initial checks
@@ -47,6 +52,21 @@ public class Destroyable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-       // if(collision.gameObject.tag
+        if (collision.gameObject.tag == "Crocodile" || collision.relativeVelocity.magnitude >= 6f)
+        {
+            CollisionActions(collision);
+        }
+
+        Debug.Log(collision.relativeVelocity.magnitude);
+    }
+
+    //Failsafe
+    private void OnCollisionStay(Collision collision)
+    {
+        collisionTimer += Time.deltaTime;
+        if(collisionTimer > collisionTimeLimit)
+        {
+            CollisionActions(collision, false);
+        }
     }
 }
