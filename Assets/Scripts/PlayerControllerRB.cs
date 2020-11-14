@@ -32,12 +32,12 @@ public class PlayerControllerRB : MonoBehaviour
         //ground check
         if( Physics.BoxCast(transform.position, Vector3.one * GroundCheckRadius, Vector3.down, out RaycastHit hit, Quaternion.identity, GroundCheckDistance, LayerMask.GetMask("ForegroundEnvironment", "Ground")) )
         {
-            print("grounded");
+            //print("grounded");
             grounded = true;
         }
         else
         {
-            print("not grounded");
+            //print("not grounded");
             grounded = false;
         }
 

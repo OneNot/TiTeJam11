@@ -6,30 +6,18 @@ public class GamePieceSpawner : MonoBehaviour
 {
     public static GamePieceSpawner Instance;
     [SerializeField]
-    List<GameObject> GamePiecesToPool;
-    [SerializeField]
-    List<GameObject> GamePiecePool;
-    public float DisableAtDistance = 500f;
+    List<GameObject> GamePiecePrefs;
+    public float DestroyAtDistance = 500f;
 
-    private GamePiece latestPieceAdded = null;
+    private Vector3 endPointOfPreviousPiece;
+
 
     private void Awake() {
         Instance = this;
     }
 
     private void Start() {
-        GamePiecePool = new List<GameObject>();
-        if(GamePiecesToPool != null)
-        {
-            for(int i = 0; i < GamePiecesToPool.Count; i++)
-            {
-                GameObject obj = Instantiate(GamePiecesToPool[i]);
-                obj.SetActive(false);
-                GamePiecePool.Add(obj);
-            }
-        }
-
-        SpawnRandomGamePiece();
+        SpawnRandomGamePiece(true);
     }
 
     private void Update() {
@@ -37,34 +25,24 @@ public class GamePieceSpawner : MonoBehaviour
             SpawnRandomGamePiece();
     }
 
-    private void SpawnRandomGamePiece()
+    private void SpawnRandomGamePiece(bool first = false)
     {
         //get random object from pool
-        GameObject go = GamePiecePool[Random.Range(0, GamePiecePool.Count)];
-        
-        //if the object is already in use
-        if(go.activeSelf)
-        {
-            //duplicate a new one instead
-            go = Instantiate(go);
-            go.GetComponent<GamePiece>().duplicate = true;
-        }
-
+        GameObject go = Instantiate(GamePiecePrefs[Random.Range(0, GamePiecePrefs.Count)]);
         go.SetActive(true);
-        
-        //if not the first piece
-        if(latestPieceAdded != null)
+
+        Transform gr = go.transform.Find("ground");
+
+        if(first)
         {
-            //position the new piece right after the previous one
-            go.transform.position = new Vector3(latestPieceAdded.groundCollider.bounds.min.x - go.GetComponent<GamePiece>().groundCollider.transform.localScale.x/2, latestPieceAdded.transform.position.y, latestPieceAdded.transform.position.z);
-        }
-        else //first piece
-        {
-            //position the first piece
             go.transform.position = transform.position;
         }
+        else
+        {
+            go.transform.position = new Vector3(endPointOfPreviousPiece.x - (gr.localScale.x / 2), endPointOfPreviousPiece.y, endPointOfPreviousPiece.z);
+        }
 
-        //update previous/latest piece
-        latestPieceAdded = go.GetComponent<GamePiece>();
+        endPointOfPreviousPiece = new Vector3(go.transform.position.x + gr.GetComponent<Collider>().bounds.min.x, go.transform.position.y, go.transform.position.z);
+        Debug.DrawLine(endPointOfPreviousPiece, new Vector3(endPointOfPreviousPiece.x, endPointOfPreviousPiece.y + 100f, endPointOfPreviousPiece.z), Color.red, 5f);
     }
 }
