@@ -55,7 +55,7 @@ public class Destroyable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Crocodile" || collision.relativeVelocity.magnitude >= 5f)
+        if (collision.gameObject.tag == "Crocodile" || collision.relativeVelocity.magnitude >= 5f && collision.gameObject.tag != "Player")
         {
             if(collision.gameObject.tag == "Crocodile")
             {
@@ -91,6 +91,8 @@ public class Destroyable : MonoBehaviour
 
         if (thisCrocodileTouched || otherCrocodileTouched)
         {
+            //CollisionActions(collision, false);
+
             collisionTimer += Time.deltaTime;
             if (collisionTimer > collisionTimeLimit)
             {
