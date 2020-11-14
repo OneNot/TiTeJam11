@@ -7,6 +7,7 @@ public class GamePieceSpawner : MonoBehaviour
     public static GamePieceSpawner Instance;
     [SerializeField]
     List<GameObject> GamePiecesToPool;
+    [SerializeField]
     List<GameObject> GamePiecePool;
     public float DisableAtDistance = 500f;
 
@@ -55,12 +56,12 @@ public class GamePieceSpawner : MonoBehaviour
         if(latestPieceAdded != null)
         {
             //position the new piece right after the previous one
-            go.transform.position = new Vector3(0f, 0f, latestPieceAdded.groundCollider.bounds.max.z + go.GetComponent<GamePiece>().groundCollider.transform.localScale.z/2);
+            go.transform.position = new Vector3(latestPieceAdded.groundCollider.bounds.min.x - go.GetComponent<GamePiece>().groundCollider.transform.localScale.x/2, latestPieceAdded.transform.position.y, latestPieceAdded.transform.position.z);
         }
         else //first piece
         {
             //position the first piece
-            go.transform.position = Vector3.zero;
+            go.transform.position = transform.position;
         }
 
         //update previous/latest piece
