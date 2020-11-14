@@ -7,6 +7,8 @@ public class GamePieceSpawner : MonoBehaviour
     public static GamePieceSpawner Instance;
     [SerializeField]
     List<GameObject> GamePiecePrefs;
+    [Tooltip("use negative value for random")]
+    public int FirstPieceToSpawn = -1;
     public float DestroyAtDistance = 500f;
 
     private Vector3 endPointOfPreviousPiece;
@@ -17,18 +19,42 @@ public class GamePieceSpawner : MonoBehaviour
     }
 
     private void Start() {
-        SpawnRandomGamePiece(true);
+        SpawnGamePiece(true, FirstPieceToSpawn);
     }
 
     private void Update() {
         if(Input.GetButtonDown("Fire1"))
-            SpawnRandomGamePiece();
+            SpawnGamePiece();
+        else if(Input.GetKeyDown(KeyCode.Alpha0))
+            SpawnGamePiece(false, 0);
+        else if(Input.GetKeyDown(KeyCode.Alpha1))
+            SpawnGamePiece(false, 1);
+        else if(Input.GetKeyDown(KeyCode.Alpha2))
+            SpawnGamePiece(false, 2);
+        else if(Input.GetKeyDown(KeyCode.Alpha3))
+            SpawnGamePiece(false, 3);
+        else if(Input.GetKeyDown(KeyCode.Alpha4))
+            SpawnGamePiece(false, 4);
+        else if(Input.GetKeyDown(KeyCode.Alpha5))
+            SpawnGamePiece(false, 5);
     }
 
-    private void SpawnRandomGamePiece(bool first = false)
+    private void SpawnGamePiece(bool first = false, int indexOfPieceToSpawn = -1)
     {
-        //get random object from pool
-        GameObject go = Instantiate(GamePiecePrefs[Random.Range(0, GamePiecePrefs.Count)]);
+        GameObject go;
+
+        //get random object
+        if(indexOfPieceToSpawn < 0)
+            go = Instantiate(GamePiecePrefs[Random.Range(0, GamePiecePrefs.Count)]);
+        else //get given object
+        {
+            if(indexOfPieceToSpawn < GamePiecePrefs.Count)
+                go = Instantiate(GamePiecePrefs[indexOfPieceToSpawn]);
+            else
+                return;
+        }
+
+
         go.SetActive(true);
 
         Transform gr = go.transform.Find("ground");
