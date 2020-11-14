@@ -90,4 +90,19 @@ public class Crocodile : MonoBehaviour
         Walking = false;
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+
+            // Debug things
+            Debug.Log("Bonked player, do things");         
+            // rb.constraints = RigidbodyConstraints.None; // only needed for testing with temporarily inanimate "player" cubes
+
+
+
+            rb.AddForce((-Vector3.right * 10f) + Vector3.up * 10f, ForceMode.Impulse);
+        }
+    }
 }
