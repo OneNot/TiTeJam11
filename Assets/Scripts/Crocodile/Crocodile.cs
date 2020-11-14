@@ -103,6 +103,7 @@ public class Crocodile : MonoBehaviour
 
 
             rb.AddForce((-Vector3.right * 10f) + Vector3.up * 10f, ForceMode.Impulse);
+            PlayerControllerRB.Instance.StunForXSeconds(3);
         }
     }
 }

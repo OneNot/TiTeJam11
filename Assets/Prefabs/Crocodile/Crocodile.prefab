@@ -6648,7 +6648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7841295584734746800}
-  movementSpeed: 40000
+  movementSpeed: 80000
 --- !u!54 &6922183379007083313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6657,7 +6657,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6922183379007083316}
   serializedVersion: 2
-  m_Mass: 20
+  m_Mass: 40
   m_Drag: 4
   m_AngularDrag: 0
   m_UseGravity: 0
