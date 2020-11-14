@@ -54,7 +54,7 @@ public class Destroyable : MonoBehaviour
         {
             if (t.gameObject != this.gameObject)
             {
-                if (t.GetComponent<Destroyable>() == null)
+                if (t.GetComponent<Destroyable>() == null && t.GetComponent<Collider>() != null)
                 {
                     Destroyable d = t.gameObject.AddComponent<Destroyable>();
                 }
