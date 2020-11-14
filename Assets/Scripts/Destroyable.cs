@@ -61,12 +61,12 @@ public class Destroyable : MonoBehaviour
             }
         }
 
-        if (gameObject.GetComponent<Collider>() == null)
+        /*if (gameObject.GetComponent<Collider>() == null)
         {
             Debug.Log("Missing a collider on " + gameObject.name + ", adding mesh collider. Add a proper collider beforehand if this causes problems");
             MeshCollider mc = gameObject.AddComponent<MeshCollider>();
             mc.convex = true;
-        }
+        }*/
         /*rb = gameObject.GetComponentInChildren<Rigidbody>();
         if (rb == null)
         {
