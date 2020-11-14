@@ -12,6 +12,7 @@ public class PlayerState : MonoBehaviour
 
     private void Awake() {
         Instance = this;
+        currentHP = MaxHP;
     }
 
     private void Update() {
