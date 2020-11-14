@@ -56,8 +56,6 @@ public class Destroyable : MonoBehaviour
         {
             CollisionActions(collision);
         }
-
-        Debug.Log(collision.relativeVelocity.magnitude);
     }
 
     //Failsafe
