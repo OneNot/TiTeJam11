@@ -25,7 +25,7 @@ public class PlayerControllerRB : MonoBehaviour
 
     private void Update() {
         //get inputs
-        float hInput = Input.GetAxis("Horizontal");
+        float hInput = -Input.GetAxis("Horizontal");
         bool jumpInput = Input.GetButtonDown("Jump");
         bool grounded = false;
 
@@ -42,11 +42,15 @@ public class PlayerControllerRB : MonoBehaviour
         }
 
         //move player horizontally
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, hInput * MoveSpeed);
+        rb.velocity = new Vector3(hInput * MoveSpeed, rb.velocity.y, rb.velocity.z);
 
         //jump
         if(jumpInput && grounded)
         {
+            //making sure the jump propels the player upwards always the same amount, regardless of other downward/upward forces
+            //main reason being that you can jump ever so slightly before you actually hit the ground. So you might have downward motion when you jump, resulting in a smaller jump.
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
         }
     }
