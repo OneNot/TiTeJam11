@@ -50,7 +50,7 @@ public class PlayerControllerRB : MonoBehaviour
             //making sure the jump propels the player upwards always the same amount, regardless of other downward/upward forces
             //main reason being that you can jump ever so slightly before you actually hit the ground. So you might have downward motion when you jump, resulting in a smaller jump.
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-            
+
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
         }
     }

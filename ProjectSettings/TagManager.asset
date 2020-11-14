@@ -17,8 +17,8 @@ TagManager:
   - ForegroundEnvironment
   - Ground
   - Crocodile
-  - 
-  - 
+  - DestroyableEnvironment
+  - Player
   - 
   - 
   - 
