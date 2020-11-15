@@ -109,7 +109,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ffab744cc71e1e747a860050a18d4d4b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -153,7 +153,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.9
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6649,6 +6649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7841295584734746800}
   movementSpeed: 80000
+  movementSpeedIncreaseRate: 200
 --- !u!54 &6922183379007083313
 Rigidbody:
   m_ObjectHideFlags: 0
