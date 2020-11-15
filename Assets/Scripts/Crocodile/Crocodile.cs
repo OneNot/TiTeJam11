@@ -8,6 +8,7 @@ public class Crocodile : MonoBehaviour
     public Animator animator;
     public float movementSpeed;
     public float movementSpeedIncreaseRate;
+    public float MaxMoveSpeed = 1000f;
 
     // Method based
     private bool walking;
@@ -67,7 +68,9 @@ public class Crocodile : MonoBehaviour
 
     public void IncreaseMovementSpeed()
     {
-        movementSpeed += movementSpeedIncreaseRate * Time.deltaTime;
+        if(Mathf.Abs(rb.velocity.x) < MaxMoveSpeed)
+            movementSpeed += movementSpeedIncreaseRate * Time.deltaTime;
+            
         animator.speed = Mathf.Abs(rb.velocity.x / 10f);
     }
 

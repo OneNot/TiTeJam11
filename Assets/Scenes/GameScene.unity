@@ -2066,12 +2066,16 @@ PrefabInstance:
       value: 124
       objectReference: {fileID: 0}
     - target: {fileID: 6922183379007083314, guid: 21e5fe7caba3c5b4eb816fc016685e09, type: 3}
+      propertyPath: MaxMoveSpeed
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922183379007083314, guid: 21e5fe7caba3c5b4eb816fc016685e09, type: 3}
       propertyPath: movementSpeed
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6922183379007083314, guid: 21e5fe7caba3c5b4eb816fc016685e09, type: 3}
       propertyPath: movementSpeedIncreaseRate
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6922183379007083315, guid: 21e5fe7caba3c5b4eb816fc016685e09, type: 3}
       propertyPath: m_RootOrder
@@ -7155,7 +7159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2988387325409916771, guid: 71567108b5050b746876aca647b3c31b, type: 3}
       propertyPath: GamePiecePrefs.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2988387325409916771, guid: 71567108b5050b746876aca647b3c31b, type: 3}
       propertyPath: GamePiecesToPool.Array.size
@@ -7177,6 +7181,10 @@ PrefabInstance:
       propertyPath: GamePiecePrefs.Array.data[3]
       value: 
       objectReference: {fileID: 7401847408354970397, guid: 450ece603d9276243a9770ca2bf3f4c8, type: 3}
+    - target: {fileID: 2988387325409916771, guid: 71567108b5050b746876aca647b3c31b, type: 3}
+      propertyPath: GamePiecePrefs.Array.data[4]
+      value: 
+      objectReference: {fileID: 7401847408354970397, guid: 3e9bc93933a41c04b87e5f8737938363, type: 3}
     - target: {fileID: 2988387325409916771, guid: 71567108b5050b746876aca647b3c31b, type: 3}
       propertyPath: GamePiecesToPool.Array.data[1]
       value: 
