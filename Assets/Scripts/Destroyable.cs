@@ -16,16 +16,11 @@ public class Destroyable : MonoBehaviour
         InitialChecks();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
+        if(Vector3.Distance(transform.position, PlayerControllerRB.Instance.transform.position) > 500f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void CollisionActions(Collision _collision, bool addForce = true)

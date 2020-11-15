@@ -26,7 +26,7 @@ public class PlayerState : MonoBehaviour
     public void ChangeHealth(int healthChange)
     {
         if(!invulnerable || healthChange > 0)
-        currentHP += healthChange;
+            currentHP += healthChange;
 
         Debug.Log(currentHP);
     }
