@@ -41,6 +41,8 @@ public class Destroyable : MonoBehaviour
         rb = gameObject.AddComponent<Rigidbody>();
         if (_collision.gameObject.tag == "Crocodile" && addForce)
             rb.AddRelativeForce(_collision.GetContact(0).point.normalized * 15f, ForceMode.Impulse);
+
+        gameObject.layer = 8;
     }
 
     public void InitialChecks() // Initial checks
