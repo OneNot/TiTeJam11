@@ -28,6 +28,10 @@ public class PlayerState : MonoBehaviour
         if(!invulnerable || healthChange > 0)
             currentHP += healthChange;
 
+        if(currentHP <= 0)
+        {
+            IGUI.Instance.ShowGameOverScreen();
+        }
         Debug.Log(currentHP);
     }
 
