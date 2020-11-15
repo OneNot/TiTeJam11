@@ -426,7 +426,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43930
+  m_Name: pb_Mesh-252546
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -605,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6922183379007083315, guid: 21e5fe7caba3c5b4eb816fc016685e09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.77
+      value: 105.2
       objectReference: {fileID: 0}
     - target: {fileID: 6922183379007083315, guid: 21e5fe7caba3c5b4eb816fc016685e09, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5496,7 +5496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2988387325409916771, guid: 71567108b5050b746876aca647b3c31b, type: 3}
       propertyPath: FirstPieceToSpawn
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2988387325409916771, guid: 71567108b5050b746876aca647b3c31b, type: 3}
       propertyPath: GamePiecePrefs.Array.size

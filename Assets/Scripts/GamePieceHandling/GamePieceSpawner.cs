@@ -45,7 +45,7 @@ public class GamePieceSpawner : MonoBehaviour
 
         //get random object
         if(indexOfPieceToSpawn < 0)
-            go = Instantiate(GamePiecePrefs[Random.Range(0, GamePiecePrefs.Count)]);
+            go = Instantiate(GamePiecePrefs[Random.Range(0, GamePiecePrefs.Count)], Vector3.zero, Quaternion.Euler(0f, -90f, 0f));
         else //get given object
         {
             if(indexOfPieceToSpawn < GamePiecePrefs.Count)
@@ -65,7 +65,7 @@ public class GamePieceSpawner : MonoBehaviour
         }
         else
         {
-            go.transform.position = new Vector3(endPointOfPreviousPiece.x - (gr.localScale.x / 2), endPointOfPreviousPiece.y, endPointOfPreviousPiece.z);
+            go.transform.position = new Vector3(endPointOfPreviousPiece.x - (gr.GetComponent<Collider>().bounds.extents.x), endPointOfPreviousPiece.y, endPointOfPreviousPiece.z);
         }
 
         endPointOfPreviousPiece = new Vector3(go.transform.position.x + gr.GetComponent<Collider>().bounds.min.x, go.transform.position.y, go.transform.position.z);
