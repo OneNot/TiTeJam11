@@ -9,6 +9,8 @@ public class PlayerControllerRB : MonoBehaviour
     //public values
     public float MoveSpeed, InAirMoveSpeedMultiplier = 1, JumpForce, GravityScale, TerminalVelocity;
     public float GroundCheckDistance, GroundCheckRadius;
+    public Animator animator;
+    public GameObject model;
 
     [HideInInspector]
     private bool InputEnabled = true;
@@ -34,11 +36,16 @@ public class PlayerControllerRB : MonoBehaviour
         {
             //print("grounded");
             grounded = true;
+
+            animator.SetBool("Airborne", false);
         }
         else
         {
             //print("not grounded");
             grounded = false;
+
+            animator.SetBool("Airborne", true);
+            animator.SetBool("Walking", false);
         }
 
         if(InputEnabled)
@@ -50,8 +57,22 @@ public class PlayerControllerRB : MonoBehaviour
             //move
             rb.velocity = new Vector3(hInput * MoveSpeed * (grounded ? 1 : InAirMoveSpeedMultiplier), rb.velocity.y, rb.velocity.z);
 
+            if (hInput != 0 && grounded)
+            {
+                animator.SetBool("Walking", true);
+            }
+
+            if (hInput > 0)
+            {
+                model.transform.eulerAngles = new Vector3(model.transform.eulerAngles.x, 0, model.transform.eulerAngles.z);
+            }
+            else
+            {
+                model.transform.eulerAngles = new Vector3(model.transform.eulerAngles.x, 180, model.transform.eulerAngles.z);
+            }
+
             //jump
-            if(jumpInput && grounded)
+            if (jumpInput && grounded)
             {
                 //making sure the jump propels the player upwards always the same amount, regardless of other downward/upward forces
                 //main reason being that you can jump ever so slightly before you actually hit the ground. So you might have downward motion when you jump, resulting in a smaller jump.
@@ -59,6 +80,11 @@ public class PlayerControllerRB : MonoBehaviour
 
                 rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             }
+        }
+
+        if (hInput == 0)    // Moved out of the former if clause to consider stunned state etc
+        {
+            animator.SetBool("Walking", false);
         }
     }
 
