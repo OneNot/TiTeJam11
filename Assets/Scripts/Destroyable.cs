@@ -74,7 +74,7 @@ public class Destroyable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Crocodile" || collision.relativeVelocity.magnitude >= 5.5f && collision.gameObject.tag != "Player")
+        if (collision.gameObject.tag == "Crocodile" || collision.relativeVelocity.magnitude >= 6f && collision.gameObject.tag != "Player")
         {
             if(collision.gameObject.tag == "Crocodile")
             {

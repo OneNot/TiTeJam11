@@ -7,6 +7,7 @@ public class Crocodile : MonoBehaviour
     // Public
     public Animator animator;
     public float movementSpeed;
+    public float movementSpeedIncreaseRate;
 
     // Method based
     private bool walking;
@@ -14,10 +15,12 @@ public class Crocodile : MonoBehaviour
 
     // private
     private Rigidbody rb;
+    private float startingMovementSpeed;
 
     private void Awake()
     {
         rb = gameObject.GetComponentInChildren<Rigidbody>();
+        startingMovementSpeed = movementSpeed;
     }
     // Start is called before the first frame update
     void Start()
@@ -28,22 +31,7 @@ public class Crocodile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Chomping = false;
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Chomping = true;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Walking = false;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Walking = true;
-        }
+        IncreaseMovementSpeed();
     }
 
     private void FixedUpdate()
@@ -75,6 +63,12 @@ public class Crocodile : MonoBehaviour
             chomping = value;
             animator.SetBool("Chomping", value);
         }
+    }
+
+    public void IncreaseMovementSpeed()
+    {
+        movementSpeed += movementSpeedIncreaseRate * Time.deltaTime;
+        animator.speed = movementSpeed / startingMovementSpeed;
     }
 
     public void MoveRight()
