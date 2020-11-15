@@ -76,13 +76,15 @@ public class PlayerControllerRB : MonoBehaviour
 
     private IEnumerator StunForXSecondsIE(float seconds = 1f)
     {
+        PlayerState.Instance.invulnerable = true;   //make player invulnerable
         InputEnabled = false; //disable inputs for stun duration
         rb.constraints = RigidbodyConstraints.FreezePositionZ; //disable all other constrains, but z movement
         rb.AddTorque(new Vector3(100f, 100f, 0f), ForceMode.Impulse); //add torque to set player spinning
 
         yield return new WaitForSeconds(seconds); //wait set amount
 
-        //reset player rotation
+        //reset player rotation and invulnerability
+        PlayerState.Instance.invulnerable = false;
         rb.angularVelocity = Vector3.zero;
         transform.rotation = Quaternion.Euler(Vector3.zero);
 
