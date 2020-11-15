@@ -108,6 +108,7 @@ public class Crocodile : MonoBehaviour
             {
                 PlayerState.Instance.ChangeHealth(-1);
                 PlayerControllerRB.Instance.StunForXSeconds(1.5f);
+                PlayerAudio.Instance.PlaySqueek();
             }  
         }
     }
