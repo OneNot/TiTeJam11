@@ -97,13 +97,18 @@ public class Crocodile : MonoBehaviour
             Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
 
             // Debug things
-            Debug.Log("Bonked player, do things");         
+            //Debug.Log("Bonked player, do things");         
             // rb.constraints = RigidbodyConstraints.None; // only needed for testing with temporarily inanimate "player" cubes
 
 
 
-            rb.AddForce((-Vector3.right * 10f) + Vector3.up * 10f, ForceMode.Impulse);
-            PlayerControllerRB.Instance.StunForXSeconds(3);
+            rb.AddForce((-Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+
+            if (!PlayerState.Instance.invulnerable)
+            {
+                PlayerState.Instance.ChangeHealth(-1);
+                PlayerControllerRB.Instance.StunForXSeconds(1.5f);
+            }  
         }
     }
 }

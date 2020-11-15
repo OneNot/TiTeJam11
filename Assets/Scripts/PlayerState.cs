@@ -7,6 +7,7 @@ public class PlayerState : MonoBehaviour
     public static PlayerState Instance;
 
     public int MaxHP = 3;
+    public bool invulnerable = false;
     private int currentHP;
 
 
@@ -24,7 +25,10 @@ public class PlayerState : MonoBehaviour
 
     public void ChangeHealth(int healthChange)
     {
+        if(!invulnerable || healthChange > 0)
         currentHP += healthChange;
+
+        Debug.Log(currentHP);
     }
 
 }

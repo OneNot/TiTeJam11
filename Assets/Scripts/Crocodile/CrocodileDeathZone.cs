@@ -20,7 +20,7 @@ public class CrocodileDeathZone : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("Player found! Trigger deathzone");
+            PlayerState.Instance.ChangeHealth(-3);
         }
     }
 }
