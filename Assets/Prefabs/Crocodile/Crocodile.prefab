@@ -6649,7 +6649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7841295584734746800}
   movementSpeed: 80000
-  movementSpeedIncreaseRate: 100
+  movementSpeedIncreaseRate: 200
 --- !u!54 &6922183379007083313
 Rigidbody:
   m_ObjectHideFlags: 0
