@@ -10,6 +10,7 @@ public class GamePieceSpawner : MonoBehaviour
     [Tooltip("use negative value for random")]
     public int FirstPieceToSpawn = -1;
     public float DestroyAtDistance = 500f;
+    public float DistanceToSpawnNew = 500f;
 
     private Vector3 endPointOfPreviousPiece;
 
@@ -23,8 +24,12 @@ public class GamePieceSpawner : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetButtonDown("Fire1"))
+
+        if(Vector3.Distance(PlayerControllerRB.Instance.transform.position, endPointOfPreviousPiece) < DistanceToSpawnNew)
             SpawnGamePiece();
+
+        // if(Input.GetButtonDown("Fire1"))
+        //     SpawnGamePiece();
         else if(Input.GetKeyDown(KeyCode.Alpha0))
             SpawnGamePiece(false, 0);
         else if(Input.GetKeyDown(KeyCode.Alpha1))
