@@ -2359,7 +2359,7 @@ GameObject:
   - component: {fileID: 4110638520861719822}
   - component: {fileID: 4110638520861719821}
   - component: {fileID: 4110638520861719820}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player_Mouse
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2409,7 +2409,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4110638520861719811}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 26b4c32c18b8de6469e795b2234db537, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -13132,7 +13132,7 @@ Transform:
   - {fileID: 2777175480540661399}
   m_Father: {fileID: 5163657357720763679}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 210, z: -10}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -10}
 --- !u!95 &5895324694328386281
 Animator:
   serializedVersion: 3
