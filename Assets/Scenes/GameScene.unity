@@ -9442,6 +9442,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 327695006}
+    - target: {fileID: 7831244845918735278, guid: 82da5bb41ec3ce74aaf5bf1787a8286f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 210
+      objectReference: {fileID: 0}
     - target: {fileID: 8228159586318421438, guid: 82da5bb41ec3ce74aaf5bf1787a8286f, type: 3}
       propertyPath: m_Mesh
       value: 
