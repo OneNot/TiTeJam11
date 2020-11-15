@@ -68,12 +68,12 @@ public class Crocodile : MonoBehaviour
     public void IncreaseMovementSpeed()
     {
         movementSpeed += movementSpeedIncreaseRate * Time.deltaTime;
-        animator.speed = movementSpeed / startingMovementSpeed;
+        animator.speed = Mathf.Abs(rb.velocity.x / 10f);
     }
 
     public void MoveRight()
     {
-        rb.AddForce(transform.forward * movementSpeed * Time.deltaTime);
+        rb.AddForce(transform.forward * movementSpeed * Time.deltaTime, ForceMode.Acceleration);
         Walking = true;
         Chomping = true;
     }
