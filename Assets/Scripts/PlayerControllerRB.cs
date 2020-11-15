@@ -68,7 +68,7 @@ public class PlayerControllerRB : MonoBehaviour
             }
             else
             {
-                model.transform.eulerAngles = new Vector3(model.transform.eulerAngles.x, 210, model.transform.eulerAngles.z);
+                model.transform.eulerAngles = new Vector3(model.transform.eulerAngles.x, 180, model.transform.eulerAngles.z);
             }
 
             //jump
