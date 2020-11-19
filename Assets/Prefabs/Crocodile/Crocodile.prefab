@@ -6429,9 +6429,9 @@ GameObject:
   - component: {fileID: 1003493233552585793}
   - component: {fileID: 6097689396967242349}
   - component: {fileID: 4677217527116158427}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DeathZone
-  m_TagString: Untagged
+  m_TagString: Crocodile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6443,13 +6443,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4769334820918149732}
-  m_LocalRotation: {x: -0.000000059604645, y: 0.7071068, z: 0.000000059604645, w: 0.7071068}
-  m_LocalPosition: {x: -0.2047111, y: 0.019393742, z: 0}
+  m_LocalRotation: {x: -0.1489361, y: 0.6442991, z: 0.104979426, w: 0.74274904}
+  m_LocalPosition: {x: 0.228, y: 0.089, z: 0.031}
   m_LocalScale: {x: 0.839839, y: 0.46329603, z: 0.09999999}
   m_Children: []
   m_Father: {fileID: 7465332549250990603}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -20.887, y: 82.287, z: -2.207}
 --- !u!65 &6097689396967242349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6650,6 +6650,7 @@ MonoBehaviour:
   animator: {fileID: 7841295584734746800}
   movementSpeed: 80000
   movementSpeedIncreaseRate: 200
+  MaxMoveSpeed: 1000
 --- !u!54 &6922183379007083313
 Rigidbody:
   m_ObjectHideFlags: 0

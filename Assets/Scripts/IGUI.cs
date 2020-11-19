@@ -22,7 +22,7 @@ public class IGUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Resume();
     }
 
     // Update is called once per frame
@@ -43,18 +43,21 @@ public class IGUI : MonoBehaviour
 
     public void ShowGameOverScreen()
     {
+        Cursor.visible = true;
         Time.timeScale = 0;
         GameOver.SetActive(true);
     }
 
     public void Pause()
     {
+        Cursor.visible = true;
         Time.timeScale = 0;
         PauseScreen.SetActive(true);
     }
 
     public void Resume()
     {
+        Cursor.visible = false;
         Time.timeScale = 1;
         PauseScreen.SetActive(false);
     }
