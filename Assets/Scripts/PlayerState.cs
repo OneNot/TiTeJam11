@@ -23,9 +23,9 @@ public class PlayerState : MonoBehaviour
         }
     }
 
-    public void ChangeHealth(int healthChange)
+    public void ChangeHealth(int healthChange, bool overrideInvunerability = false)
     {
-        if(!invulnerable || healthChange > 0)
+        if(overrideInvunerability || !invulnerable || healthChange > 0)
             currentHP += healthChange;
 
         if(currentHP <= 0)

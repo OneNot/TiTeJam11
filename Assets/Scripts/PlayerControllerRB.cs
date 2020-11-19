@@ -48,6 +48,17 @@ public class PlayerControllerRB : MonoBehaviour
             animator.SetBool("Walking", false);
         }
 
+        //Orient to ground - Needs more work (pivot on vääräs paikkaa for one)
+        /*
+        if(grounded)
+        {
+            if(Physics.Raycast(transform.position, -transform.up, out RaycastHit hit2, 5f, LayerMask.GetMask("ForegroundEnvironment", "Ground")))
+            {
+                model.transform.up = hit2.normal;
+            }
+        }
+        */
+
         if(InputEnabled)
         {
             //get inputs
