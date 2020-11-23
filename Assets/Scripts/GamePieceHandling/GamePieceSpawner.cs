@@ -59,10 +59,14 @@ public class GamePieceSpawner : MonoBehaviour
                 return;
         }
 
-
         go.SetActive(true);
 
         Transform gr = go.transform.Find("ground");
+
+        //These values should be the same for all pieces. They should be the same in the prefabs as well, but just in case, might as well set them here too
+        gr.localPosition = Vector3.zero;
+        gr.localScale = new Vector3(20f, 5f, gr.localScale.z);
+        gr.localRotation = Quaternion.identity;
 
         if(first)
         {

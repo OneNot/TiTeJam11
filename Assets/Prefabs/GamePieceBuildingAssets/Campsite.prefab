@@ -11169,7 +11169,7 @@ GameObject:
   - component: {fileID: 448251344906094198}
   - component: {fileID: 6368155273165756848}
   m_Layer: 11
-  m_Name: mesh137140296
+  m_Name: log
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
