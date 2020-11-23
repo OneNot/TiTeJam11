@@ -7,7 +7,7 @@ public class PlayerControllerRB : MonoBehaviour
     public static PlayerControllerRB Instance;
 
     //public values
-    public float MoveSpeed, InAirMoveSpeedMultiplier = 1, JumpForce, GravityScale, TerminalVelocity;
+    public float MoveSpeed, InAirMoveSpeedMultiplier = 1, JumpForce, JumpForcePortionPerStep = 0.2f, GravityScale, TerminalVelocity;
     public float GroundCheckDistance, GroundCheckRadius;
     public Animator animator;
     public GameObject model;
@@ -19,14 +19,16 @@ public class PlayerControllerRB : MonoBehaviour
     private Rigidbody rb;
 
     //private values
-    private bool jumpUsed, grounded;
-    private float hInput;
+    private bool grounded;
+    private float hInput, remainingJumpForce;
 
     private void Awake() {
         Instance = this;
         rb = GetComponent<Rigidbody>();
         if(rb == null)
             rb = gameObject.AddComponent<Rigidbody>();
+
+        remainingJumpForce = 0f;
     }
 
     private void Update() {
@@ -64,6 +66,7 @@ public class PlayerControllerRB : MonoBehaviour
             //get inputs
             hInput = -Input.GetAxis("Horizontal");
             bool jumpInput = Input.GetButtonDown("Jump");
+            bool jumpInputRelease = Input.GetButtonUp("Jump");
 
             //move
             rb.velocity = new Vector3(hInput * MoveSpeed * (grounded ? 1 : InAirMoveSpeedMultiplier), rb.velocity.y, rb.velocity.z);
@@ -89,8 +92,10 @@ public class PlayerControllerRB : MonoBehaviour
                 //main reason being that you can jump ever so slightly before you actually hit the ground. So you might have downward motion when you jump, resulting in a smaller jump.
                 rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-                rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+                remainingJumpForce = JumpForce;
             }
+            if(jumpInputRelease)
+                remainingJumpForce = 0f;
         }
 
         if (hInput == 0)    // Moved out of the former if clause to consider stunned state etc
@@ -103,6 +108,15 @@ public class PlayerControllerRB : MonoBehaviour
         //gravity
         if(rb.velocity.y < TerminalVelocity)
             rb.AddForce(Vector3.down * 9.81f * GravityScale, ForceMode.Acceleration);
+
+        if(remainingJumpForce > 0.0001f) //basically > 0, but probably don't need to keep calculating for no reason after the value is small enough so...
+        {
+            //Probably a really bad way to do this frankly, but this is what came to mind first. Will look into a better method if this is truly horrible
+            float forceToApplyThisStep = remainingJumpForce * JumpForcePortionPerStep;
+            print("Jump force applied this physics step: " + forceToApplyThisStep);
+            rb.AddForce(Vector3.up * forceToApplyThisStep, ForceMode.Force);
+            remainingJumpForce -= forceToApplyThisStep;
+        }
     }
 
     public void StunForXSeconds(float seconds = 1f)
