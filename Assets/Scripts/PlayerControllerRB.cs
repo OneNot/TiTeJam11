@@ -113,7 +113,7 @@ public class PlayerControllerRB : MonoBehaviour
         {
             //Probably a really bad way to do this frankly, but this is what came to mind first. Will look into a better method if this is truly horrible
             float forceToApplyThisStep = remainingJumpForce * JumpForcePortionPerStep;
-            print("Jump force applied this physics step: " + forceToApplyThisStep);
+            //print("Jump force applied this physics step: " + forceToApplyThisStep);
             rb.AddForce(Vector3.up * forceToApplyThisStep, ForceMode.Force);
             remainingJumpForce -= forceToApplyThisStep;
         }
