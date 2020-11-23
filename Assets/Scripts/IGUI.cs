@@ -9,8 +9,10 @@ public class IGUI : MonoBehaviour
     public static IGUI Instance;
     public GameObject GameOver;
     public GameObject PauseScreen;
-    public Text scoreText;
-    public Text scoreText2;
+    public GameObject AliveUI;
+    public Text PauseScoreText;
+    public Text DeadScoreText;
+    public Text AliveScoreText;
 
     public float score = 0;
 
@@ -36,9 +38,8 @@ public class IGUI : MonoBehaviour
         if(!PauseScreen.activeSelf)
         score += Time.deltaTime;
 
-        scoreText.text = "Score: " + Mathf.RoundToInt(score).ToString();
-        scoreText2.text = "Score: " + Mathf.RoundToInt(score).ToString();
-
+        PauseScoreText.text = DeadScoreText.text = "Score: " + Mathf.RoundToInt(score).ToString();
+        AliveScoreText.text = Mathf.RoundToInt(score).ToString();
     }
 
     public void ShowGameOverScreen()
@@ -46,6 +47,7 @@ public class IGUI : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
         GameOver.SetActive(true);
+        AliveUI.SetActive(false);
     }
 
     public void Pause()
@@ -53,6 +55,7 @@ public class IGUI : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
         PauseScreen.SetActive(true);
+        AliveUI.SetActive(false);
     }
 
     public void Resume()
@@ -60,6 +63,7 @@ public class IGUI : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1;
         PauseScreen.SetActive(false);
+        AliveUI.SetActive(true);
     }
 
     public void Restart()

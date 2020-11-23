@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerState : MonoBehaviour
 {
     public static PlayerState Instance;
+    public Text HPText;
 
     public int MaxHP = 3;
     public bool invulnerable = false;
@@ -14,6 +16,7 @@ public class PlayerState : MonoBehaviour
     private void Awake() {
         Instance = this;
         currentHP = MaxHP;
+        HPText.text = currentHP+"/"+MaxHP+" HP";
     }
 
     private void Update() {
@@ -33,6 +36,7 @@ public class PlayerState : MonoBehaviour
             IGUI.Instance.ShowGameOverScreen();
         }
         Debug.Log(currentHP);
+        HPText.text = currentHP+"/"+MaxHP+" HP";
     }
 
 }
